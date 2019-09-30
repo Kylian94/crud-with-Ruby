@@ -1,8 +1,14 @@
-<h1>Articles</h1>
 
-<% @articles.each do |article| %>
-    <h2><%= article.title %></h2>
-    <h4><%= article.desc %></h4>
-    <a href="<%= article_path(article.id) %>" class="btn btn-primary" >See article</a>
-<% end %>
+<div class="w-full">
+<h1 class="text-center">Liste d'articles : </h1>
+</div>
 
+<div class="flex justify-center align-center p-12 bg-gray-300">
+    <% @articles.each do |article| %>
+    <div class="rounded w-1/4 bg-white p-12 m-8">
+        <h2 class=""><%= icon('fa', 'flag') %> <%= article.title %></h2>
+        <h4 class="mb-4"><%= article.desc %></h4>
+        <a href="<%= article_path(article.id) %>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >See article</a>
+    </div>
+    <% end %>
+</div>
