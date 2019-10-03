@@ -5,4 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-articles = Article.create([{ title: 'First Article', desc: 'Desc fisrt article'},{title: 'Second Article', desc: 'Desc second article'} ])
+    articles = Article.create([{ title: 'third Article', desc: 'Desc third article'},{title: 'Fourth Article', desc: 'Desc fourth article'}])
+    #categories = Category.create([{name: 'cat1', desc: 'desc first cat'}, {name: 'cat2', desc: 'desc second cat'}])

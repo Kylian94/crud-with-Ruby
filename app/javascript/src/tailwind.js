@@ -5,3 +5,4 @@ module.exports = {
   variants: {},
   plugins: []
 }
+//= require moment

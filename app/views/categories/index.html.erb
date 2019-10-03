@@ -1,0 +1,32 @@
+
+    <div class="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+		
+		<!--Left Col-->
+		<div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+			<h1 class="my-4 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">Listes des categories du blog</h1>
+			<p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Vous trouverez tous les posts par categorie directement !</p>
+		
+			<p class="text-blue-400 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in">Categories :</p>
+			<div class="flex justify-start">
+			<a href="/categories/new" class=" fade-in bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded m-2" ><i class="fa fa-plus"></i> Add Category</a>
+			</div>
+			<div class="flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
+                <% @categories.each do |category| %>
+                    <a href="/articles/category/<%= category.id %>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2" ><%= category.name %></a>
+                
+                <% end %>
+			</div>
+
+		</div>
+		
+		<!--Right Col-->
+		<div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
+			<img class="w-5/6 mx-auto lg:mr-0 slide-in-bottom" src="assets/devices.svg">
+		</div>
+		
+		<!--Footer-->
+		<div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+			<a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; Blog 2019</a>
+		</div>
+		
+	</div>
