@@ -10,19 +10,23 @@
 			<a href="/articles/new" class=" fade-in bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded m-2" ><i class="fa fa-plus"></i> Add Article</a>
 			</div>
             <% @articles.each do |article| %>
-                <div class="flex bg-white w-full justify-center md:justify-around items-center pb-24 mb-2 lg:pb-0 fade-in shadow">
+                <div class="flex bg-white w-full justify-center md:justify-around items-center py-6 px-4 mb-8 lg:pb-0 fade-in shadow">
                     <div class="flex-col w-full md:w-1/6 justify-end items-center fade-in p-2">
                         <img class="" src="https://img.icons8.com/cute-clipart/64/000000/user-male.png">
                         <p class="text-purple-300">Created :</br> <%= time_ago_in_words(article.created_at) %> ago</p>
                     </div>
-                    <div class="flex w-full justify-center md:justify-around items-center">
-                        
-                        <p class="w-1/3"><%= article.title %></p>
-                        <p class="text-gray-300 w-1/3"><%= article.desc.truncate(10) %></p>
-                        <a href="/articles/<%= article.id %>" class=" bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded m-2" ><i class="fa fa-eye"></i></a>
-                        <a href="/articles/<%= article.id %>/edit" class=" bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2" ><i class="fa fa-cog"></i></a>
-                        <%= button_to "X", article_path(article), method: :delete,class: "bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-2", data: { confirm: 'Are you sure?' }  %>
-                    </div>
+                    <div class="flex w-full justify-center md:justify-between items-center">
+                        <div class="flex-col">
+							<p class="">TITRE : <%= article.title %></p>
+							<p>CATEGORY : <a href="articles/category/<%= article.category.id%>"><span class="text-blue-500"><%= article.category.name %></span></a></p>
+							<p class="text-gray-500 ">DESCRIPTION : <%= article.desc.truncate(10) %></p>
+						</div>
+                        <div class="flex justify-around align-center w-1/4">
+                        	<a href="/articles/<%= article.id %>" class=" bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded m-2" ><i class="fa fa-eye"></i></a>
+                        	<a href="/articles/<%= article.id %>/edit" class=" bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2" ><i class="fa fa-cog"></i></a>
+                        	<%= button_to "X", article_path(article), method: :delete,class: "bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-2", data: { confirm: 'Are you sure?' }  %>
+						</div>
+					</div>
                 </div>
             <% end %>
 		</div>
