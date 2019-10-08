@@ -10,13 +10,21 @@
 			<div class="flex justify-start">
 			<a href="/categories/new" class=" fade-in bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded m-2" ><i class="fa fa-plus"></i> Add Category</a>
 			</div>
-			<div class="flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
+			<div class="flex flex-wrap w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
                 <% @categories.each do |category| %>
-                    <a href="/articles/category/<%= category.id %>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2" ><%= category.name %></a>
-                
-                <% end %>
-			</div>
 
+				<div class="w-full flex align-center justify-between">
+                    <a href="/articles/category/<%= category.id %>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2" ><%= category.name %></a>
+					<div class="flex">
+						<a class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded m-2" href="/categories/<%= category.id %>/edit"><i class="fa fa-cog"></i></a>
+						<%= button_to 'destroy', category_path(category), method: :delete,class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded m-2", data: { confirm: 'Are you sure?' }  %>
+					</div>
+				</div>
+						
+				<% end %>
+			</div>
+			
+			
 		</div>
 		
 		<!--Right Col-->

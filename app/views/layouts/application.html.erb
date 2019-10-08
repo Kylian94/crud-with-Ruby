@@ -6,11 +6,12 @@
 
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
 
   <body>
-  <div class="h-screen pb-14 bg-right bg-cover" style="background-image:url('assets/bg.svg');">
+  <div class="h-screen pb-14 bg-right bg-cover" style="background-image:url('<%= image_path('bg.svg') %>');">
     <div class="w-full container mx-auto p-6">
         
       <div class="w-full flex items-center justify-between">
@@ -30,7 +31,9 @@
       </div>
 
     </div>
-    
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name , class: "bg-green-400 text-white py-2 px-2 text-center" %>
+    <% end -%>
     <%= yield %>
   </div>
   </body>

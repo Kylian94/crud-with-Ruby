@@ -1,3 +1,43 @@
-<h1 class="text-4xl"><%= @article.title %></h1>
-<p><%= @article.desc %></p>
+
+    
+    <div class="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+		
+		<!--Left Col-->
+		<div class="flex flex-col w-full xl:w-5/5 justify-center lg:items-start overflow-y-hidden p-4">
+			<h1 class="my-4 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">Blog - Ruby on Rails</h1>
+			<p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Article n° <%= @article.id %> - created <%= time_ago_in_words(@article.created_at) %> ago</p>
+			
+            <div class="bg-white flex w-full  pb-24 mb-2 lg:pb-0 fade-in shadow ">
+                <div class="p-12 w-2/3">
+                    <h2 class="text-purple-600 text-3xl font-weight-bold mt-4"><%= @article.title %></h2>
+                    <h5 class="text-purple-500 font-weight-bold mt-4"><%= @article.category.name %></h5>
+                    <p class="mt-4">Description : <br/>
+                    <%= @article.desc %></p>
+                </div>
+                <div class="p-12 w-1/3 flex items-center justify-end">
+                    <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                    
+                    <%= link_to "Delete", @article, method: :delete, data: { confirm: 'Are you sure?' }  %>
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+            
+		</div>
+		
+		<!--Right Col-->
+		<!-- <div class="w-full xl:w-2/5 py-6 overflow-y-hidden">
+			<img class="w-5/6 mx-auto lg:mr-0 slide-in-bottom" src="assets/devices.svg">
+		</div> -->
+		
+		<!--Footer-->
+		<div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+			<a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; Blog 2019</a>
+		</div>
+		
+	</div>
 
