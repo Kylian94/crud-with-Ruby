@@ -1,24 +1,33 @@
-# README
+## Blog Articles/Category with CRUD - Ruby On Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Personnal Project to learn ruby on rails
 
-Things you may want to cover:
+Developped with ruby - On rails - Tailwind CSS
 
-* Ruby version
+![airnbn img](http://img.kp-dev.fr/crud-Rails.png) 
 
-* System dependencies
+### Ruby version
 
-* Configuration
+`` ruby 2.6.1p33 ``
 
-* Database creation
+---
 
-* Database initialization
+### How to use ?
 
-* How to run the test suite
+Download the repo or git clone with __git clone__ , then do
 
-* Services (job queues, cache servers, search engines, etc.)
+`` npm i ``
 
-* Deployment instructions
+``rails db:migrate``
 
-* ...
+`` rails s ``
+
+---
+
+### License
+
+Please use and re-use however you want.
+
+---
+
+Kylian P.
