@@ -18,7 +18,15 @@
                     <div class="flex w-full justify-center md:justify-between items-center">
                         <div class="flex-col">
 							<p class="">TITRE : <%= article.title %></p>
-							<p>CATEGORY : <a href="articles/category/<%= article.category.id%>"><span class="text-blue-500"><%= article.category.name %></span></a></p>
+							
+								<p>CATEGORY : 
+									<% @categories.each do |category| %>
+										<% if article.category_id == category.id.to_s %>
+											<a href="articles/category/<%= category.id %>"><span class="text-blue-500"><%= category.name %></span></a>
+										<% end%>
+									<% end %>
+								</p>
+								
 							<p class="text-gray-500 ">DESCRIPTION : <%= article.desc.truncate(10) %></p>
 						</div>
                         <div class="flex justify-around align-center w-1/4">
